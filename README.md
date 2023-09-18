@@ -2,6 +2,7 @@
 
 Repositorio en el que voy a subir los ejercicios que vayamos haciendo de python para que esten reunidos en un mismo sitio
 
+Los ejercicios se estan sacando de [aprende con alf](https://aprendeconalf.es/docencia/python/ejercicios/)
 
 ---
 
