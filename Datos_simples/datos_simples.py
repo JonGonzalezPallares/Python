@@ -3,7 +3,7 @@
 print("Ejercicios de datos simples")
 
 '''
-print("Ejercicio 1")
+print("\nEjercicio 1")
 print("¡Hola Mundo!")
 
 print("\nEjercicio 2")
