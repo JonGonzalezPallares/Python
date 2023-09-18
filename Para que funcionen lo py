@@ -1,1 +1,7 @@
 poner en la consola "chmod +x nombre.py"
+
+Para que funcionen desde casa:
+- Abrir el IDLE de Python
+- Seleccionar la opcion de "file" y despues "open"
+- Seleccionar el archivo que quiera
+- Darle a run para ver el resultado
