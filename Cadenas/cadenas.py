@@ -62,6 +62,8 @@ while paso<len(productosS):
 '''
 
 print("\nEjercicio 11")
+nombre = input("Introduce el nombre de un producto: ")
+precio = float(input("Introduce su precio: "))
+unidades = int(input("Introduce el numero de unidades: "))
 
-
-
+print("{nombre}: {unidades} unidades x {precio}€ = {total}€".format(nombre=nombre, unidades=unidades, precio=round(precio, 2), total=round((precio*unidades), 2)))
