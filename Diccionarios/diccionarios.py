@@ -72,9 +72,131 @@ for producto in cesta:
     suma += cesta[producto]
     print(producto, "-----", cesta[producto], "\n")
 print("Total -----", suma)
-'''
 
 print("\nEjercicio 8")
-combinacion = input("Introduce una palabra en castellano y su traduccion en ingles (formato= castellano:ingles): ")
-combinacion = combinacion.split(":")
-print(combinacion)
+diccionario = {}
+continuar=True
+while continuar:
+    combinacion = input("Introduce una palabra en castellano y su traduccion en ingles (formato= castellano:ingles): ")
+    combinacion = combinacion.split(":")
+    diccionario[combinacion[0]]=combinacion[1]
+    prueba = input("¿Continuar añadiendo?")
+    if(prueba.lower()=="si"):
+        continuar=True
+    else:
+        continuar=False
+frase = input("Introduce una frase: ")
+frase = frase.split(" ")
+traducido = ""
+paso=0
+for palabra in frase:
+    if(palabra in diccionario):
+        traducido += diccionario[palabra]+" "
+    else:
+        traducido += palabra+" "
+    paso+=1
+print(traducido)
+
+print("\nEjercicio 9")
+facturasG = {
+    0 : 76.48,
+    1 : 97.22,
+    2 : 6.09,
+    3 : 80.83,
+    4 : 52.04
+}
+eleccion = int(input("Selecciona una opción\n1. Añadir factura\n2. Pagar factura\n3. Terminar factura\n"))
+cobrada = 0
+pendiente = 0
+for factura in facturasG:
+    pendiente += facturasG[factura]
+pendiente = round(pendiente, 2)
+if(eleccion==1):
+    nuevaNum = input("Introduce un numero de factura: ")
+    nuevaCos = round(float(input("Introduce el coste: ")), 2)
+    facturasG[nuevaNum]=nuevaCos
+elif(eleccion==2):
+    pago = int(input("Introduce un numero de factura para pagar: "))
+    if(pago in facturasG):
+        pendiente -= round(facturasG[pago], 2)
+        cobrada += round(facturasG[pago], 2)
+        facturasG.pop(pago)
+    else:
+        print("El numero de factura ", pago, " no existe")
+elif(eleccion==3):
+    print("Acciones acabadas, que tenga un buen dia")
+print("Cantidad cobrada: {}\nCantidad pendiente: {}".format(cobrada, pendiente))
+
+print("\nEjercicio 10")
+baseDatos = {
+    1: {
+        "Nombre": "Jon",
+        "Direccion": "Gaztain",
+        "Telefono": 122334456,
+        "Correo": "jon@gmail.com",
+        "Preferente": True
+    },
+    2: {
+        "Nombre": "Usuario",
+        "Direccion": "Calle 1",
+        "Telefono": 000000000,
+        "Correo": "usuario@usuario.com",
+        "Preferente": False
+    }
+}
+
+cambiado = False
+opcion=""
+while opcion!=6:
+    if(opcion==1):
+        print("\nIntroduzca los datos del nuevo usuario:\n")
+        nombre = input("Nombre: ")
+        direccion = input("Direccion: ")
+        while True:
+            telefono = input("Telefono: ")
+            if(telefono.isnumeric()):
+                telefono = int(telefono)
+                break
+            else:
+                print("Vuelve a introducir el telefono")
+        correo = input("Correo: ")
+        while cambiado!=True:
+            preferente = input("Preferente: ")
+            if(preferente.lower()=="true"):
+                preferente = True
+                preferente = bool(preferente)
+                cambiado=True
+            elif(preferente.lower()=="false"):
+                preferente = False
+                preferente = bool(preferente)
+                cambiado=True
+            else:
+                print("\nSolo se acepta True o False")
+
+    elif(opcion==2):
+        nif = int(input("Introduce el NIF del cliente a borrar: "))
+        if(nif in baseDatos):
+            baseDatos.pop(nif)
+        else:
+            print("\nEl cliente con NIF ",nif," no existe")
+
+    elif(opcion==3):
+        nifBus = int(input("Introduce el NIF del cliente a buscar: "))
+        if(nifBus in baseDatos):
+            print("\n",baseDatos[nifBus])
+        else:
+            print("\nEl usuario con NIF ", nifBus, " no existe")
+    
+    elif(opcion==4):
+        print("\nTodos los clientes disponibles:")
+        for cliente in baseDatos:
+            print("\n",baseDatos[cliente])
+
+    elif(opcion==5):
+        print("\nTodos los clientes PREFERENTES:")
+        for cliente in baseDatos:
+            if(baseDatos[cliente]["Preferente"]==True):
+                print("\n"+baseDatos[cliente])
+
+    opcion = int(input("\n\nSeleccione una opcion:\n1. Añadir cliente\n2. Eliminar cliente\n3. Mostrar cliente\n4. Listar todos los clientes\n5. Listar clientes preferentes\n6. Terminar\n"))
+'''
