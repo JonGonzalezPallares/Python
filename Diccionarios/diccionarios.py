@@ -126,6 +126,7 @@ elif(eleccion==2):
 elif(eleccion==3):
     print("Acciones acabadas, que tenga un buen dia")
 print("Cantidad cobrada: {}\nCantidad pendiente: {}".format(cobrada, pendiente))
+'''
 
 print("\nEjercicio 10")
 baseDatos = {
@@ -199,4 +200,3 @@ while opcion!=6:
                 print("\n"+baseDatos[cliente])
 
     opcion = int(input("\n\nSeleccione una opcion:\n1. Añadir cliente\n2. Eliminar cliente\n3. Mostrar cliente\n4. Listar todos los clientes\n5. Listar clientes preferentes\n6. Terminar\n"))
-'''
