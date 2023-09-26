@@ -65,12 +65,27 @@ def cuadrados(numerosLis):
 
 numeros = [0, 1, 2, 3]
 print(cuadrados(numeros))
-'''
 
 print("\nEjercicio 8")
+import math
 def calculos(numerosLis):
     final = {}
     media = sum(numerosLis)/len(numerosLis)
-    #desviacion = round(math.sqrt(suma/len(divisor)), 2)
+    #Lista de los numeros que hemos pasado, de manera cuadrado
+    cuadrados = []
+    for i in numerosLis:
+        cuadrados.append(i**2)
+    varianza = (sum(cuadrados)/len(numerosLis))-(media**2)
+    desviacion = round(math.sqrt(varianza), 2)
+    
+    final["media"]=media
+    final["varianza"]=varianza
+    final["desviacion"]=desviacion
+
+    return final
 
 numeros = [0, 1, 2, 3]
+print(calculos(numeros))
+'''
+
+print("\nEjercicio 9")
