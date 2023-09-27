@@ -1,3 +1,5 @@
+#Comando: python -m pip install -U prettytable
+
 import prettytable
 from prettytable import ALL as ALL
 
