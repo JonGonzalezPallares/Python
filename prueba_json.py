@@ -14,8 +14,6 @@ date = datetime.datetime.utcnow()
 utc_time = calendar.timegm(date.utctimetuple())
 utc_time2 = utc_time+23
 
-print(79366457%23)
-
 datos = [
     {
         "dni": "12233423N",
