@@ -1,4 +1,5 @@
 print("Programacino funcional")
+from math import sin, cos, tan, exp, log
 
 '''
 print("\nEjercicio 1")
@@ -30,6 +31,27 @@ def cesta(basket, function):
         total += function(price, discount)
     return total
 print('El precio de la compra tras aplicar los descuentos es: ', cesta({1000:20, 500:10, 100:1}, descuento))
-'''
 
 print("\nEjercicio 2")
+def calcular(value, funct):
+    funciones = {'sin':sin, 'cos':cos, 'tan':tan, 'exp':exp, 'log':log}
+    result = funciones[funct](value)
+    print(result)
+
+valor = int(input("Introduce un valor: \n"))
+funcion = input("Escoge una funcion: sin, cos, tan, exp, log \n")
+calcular(valor, funcion)
+
+print("\nEjercicio 3")
+def aplicar(funcion, lista):
+    lis = []
+    for i in lista:
+        lis.append(funcion(i))
+    return lis
+def cuadrado(n):
+    return n*n
+
+print(aplicar(cuadrado, [1, 2, 3, 4]))
+'''
+
+print("\nEjercicio 4")
