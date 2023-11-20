@@ -52,6 +52,18 @@ def cuadrado(n):
     return n*n
 
 print(aplicar(cuadrado, [1, 2, 3, 4]))
-'''
 
 print("\nEjercicio 4")
+def aplicar(lista):
+    lis = []
+    for i in lista:
+        if pares(i):
+            lis.append(i)
+    return lis
+def pares(n):
+    return n % 2 == 0
+
+print(aplicar(pares, [1, 2, 3, 4]))
+'''
+
+print("\nEjercicio 5")
